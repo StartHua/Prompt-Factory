@@ -1,6 +1,6 @@
 # Prompt Factory
 
-# Prompt Factory (English)
+Example : server/result/时尚分镜助手，能分析图片并生成多角度分镜_2025-12-18
 
 AI Prompt Factory - Automated High-Quality Prompt Suite Generation
 
