@@ -60,7 +60,9 @@ class StorageService:
         prefixes = ['我需要', '我想要', '帮我', '请', '给我', '创建', '生成', '做一个', '写一个', '一个']
         suffixes = ['的提示词', '提示词', '的prompt', 'prompt', '助手', '系统']
         
-        keyword = description.strip()
+        # 只取第一行，避免换行符问题
+        keyword = description.strip().split('\n')[0].strip()
+        
         for prefix in prefixes:
             if keyword.startswith(prefix):
                 keyword = keyword[len(prefix):].strip()
@@ -75,8 +77,8 @@ class StorageService:
         if not keyword:
             keyword = f"prompt_{int(datetime.now().timestamp())}"
         
-        # Clean invalid filename characters
-        keyword = re.sub(r'[<>:"/\\|?*]', '_', keyword)
+        # Clean invalid filename characters (including newlines, brackets, etc.)
+        keyword = re.sub(r'[<>:"/\\|?*\[\]\n\r]', '_', keyword)
         return keyword
     
     def save_suite(self, data: Dict[str, Any]) -> Dict[str, Any]:

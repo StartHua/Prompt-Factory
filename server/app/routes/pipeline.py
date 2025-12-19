@@ -76,14 +76,20 @@ def start_pipeline():
     use_parallel = data.get('parallel', True)
     max_parallel = data.get('maxParallel', 3)
     
-    llm_client = LLMClient(api_key=settings.api_key, base_url=settings.base_url)
-    pipeline = PipelineService(llm_client, use_stream=use_stream, max_parallel=max_parallel)
-    task_id = pipeline.start(description, prompt_type, model)
-    
-    with _pipeline_lock:
-        _pipelines[task_id] = pipeline
-    
-    log(f"流水线创建成功: task_id={task_id}, parallel={use_parallel}, max_parallel={max_parallel}")
+    try:
+        llm_client = LLMClient(api_key=settings.api_key, base_url=settings.base_url)
+        pipeline = PipelineService(llm_client, use_stream=use_stream, max_parallel=max_parallel)
+        task_id = pipeline.start(description, prompt_type, model)
+        
+        with _pipeline_lock:
+            _pipelines[task_id] = pipeline
+        
+        log(f"流水线创建成功: task_id={task_id}, parallel={use_parallel}, max_parallel={max_parallel}")
+    except Exception as e:
+        log(f"流水线创建失败: {type(e).__name__}: {e}", "ERROR")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'success': False, 'error': f'流水线创建失败: {str(e)}'}), 500
     
     # Start pipeline in background thread
     def run_pipeline():
