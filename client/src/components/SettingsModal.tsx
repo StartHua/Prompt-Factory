@@ -181,7 +181,7 @@ export function SettingsModal({ isOpen, onClose }: Props) {
                   type="text"
                   value={localBaseUrl}
                   onChange={(e) => setLocalBaseUrl(e.target.value)}
-                  placeholder="https://api.apiyi.com/v1"
+                  placeholder="https://api.openai.com"
                   style={inputStyle}
                 />
               </div>

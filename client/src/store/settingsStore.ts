@@ -16,7 +16,7 @@ interface SettingsState extends Settings {
 
 export const useSettingsStore = create<SettingsState>()((set, get) => ({
   apiKey: '',
-  baseUrl: 'https://api.apiyi.com',
+  baseUrl: 'https://api.openai.com',
   defaultModel: 'claude-sonnet-4-5-20250929',
   useStream: false,
   language: 'cn',

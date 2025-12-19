@@ -23,7 +23,7 @@ class ChatMessage:
 class LLMClient:
     """Client for LLM API calls."""
     
-    def __init__(self, api_key: str, base_url: str = "https://api.apiyi.com/v1"):
+    def __init__(self, api_key: str, base_url: str = "https://api.openai.com"):
         """Initialize LLM client.
         
         Args:
