@@ -1,8 +1,12 @@
 # Prompt Factory
 
-Example : server/result/时尚分镜助手，能分析图片并生成多角度分镜_2025-12-18
-
 AI Prompt Factory - Automated High-Quality Prompt Suite Generation
+
+After the system runs, various roles required by agents will be created, responsible for different functions!
+
+It's not a single prompt word, it's a complete set of agent prompt word engineering！！！！
+
+Example : server/result/时尚分镜助手，能分析图片并生成多角度分镜_2025-12-18
 
 ## Overview
 
@@ -102,6 +106,10 @@ factory/
 <img width="1289" height="859" alt="9176137369cda925eeb59c4fd7213c13" src="https://github.com/user-attachments/assets/9d740f9c-efa9-4c14-b868-048c11da0083" />
 
 AI 提示词工厂 - 自动化生成高质量提示词套件
+
+系统运行后会创建各种agent 需要的角色，负责不同的职能！
+
+不是单一的提示词，是一整套agent 提示词工程！！！
 
 ## 项目简介
 
