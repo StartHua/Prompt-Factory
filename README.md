@@ -60,11 +60,11 @@ start_client.bat
 ```bash
 # Backend
 cd factory/server
-python -m uvicorn app.main:app --reload --port 8000
+python run.py
 
 # Frontend
 cd factory/client
-pnpm dev
+npm run dev
 ```
 
 ### 3. Access
@@ -159,11 +159,11 @@ start_client.bat
 ```bash
 # 后端
 cd factory/server
-python -m uvicorn app.main:app --reload --port 8000
+python run.py
 
 # 前端
 cd factory/client
-pnpm dev
+npm run dev
 ```
 
 ### 3. 访问
