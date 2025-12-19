@@ -1,37 +1,37 @@
 @echo off
 chcp 65001 >nul
-title Prompt Factory - 安装依赖
+title Prompt Factory - Install
 
 echo ========================================
-echo   Prompt Factory 依赖安装脚本
+echo   Prompt Factory - Installing...
 echo ========================================
 echo.
 
-:: 安装后端依赖
-echo [1/2] 安装 Python 后端依赖...
+:: Install backend dependencies
+echo [1/2] Installing Python dependencies...
 cd /d "%~dp0server"
 pip install -r requirements.txt
 if %errorlevel% neq 0 (
-    echo [错误] Python 依赖安装失败
+    echo [Error] Python dependencies install failed
     pause
     exit /b 1
 )
 
 echo.
 
-:: 安装前端依赖
-echo [2/2] 安装 Node.js 前端依赖...
+:: Install frontend dependencies
+echo [2/2] Installing Node.js dependencies...
 cd /d "%~dp0client"
 call npm install
 if %errorlevel% neq 0 (
-    echo [错误] Node.js 依赖安装失败
+    echo [Error] Node.js dependencies install failed
     pause
     exit /b 1
 )
 
 echo.
 echo ========================================
-echo   依赖安装完成！
-echo   运行 start.bat 启动服务
+echo   Installation complete!
+echo   Run start_server.bat and start_client.bat
 echo ========================================
 pause
