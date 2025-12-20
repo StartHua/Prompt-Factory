@@ -6,8 +6,6 @@ After the system runs, various roles required by agents will be created, respons
 
 It's not a single prompt word, it's a complete set of agent prompt word engineering！！！！
 
-Example : server/result/时尚分镜助手，能分析图片并生成多角度分镜_2025-12-18
-
 ## Overview
 
 Prompt Factory is a multi-agent collaborative prompt generation system. Input your requirements, and the system will automatically:
